@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top salary</title>
+</head>
+<body>
+    <input type="number" id="add_salary">
+    <button id="add_salary_amt" onclick="addvalue();">ADD</button>
+    <button onclick="large_amt();" id="large_amt">Large amt</button>
+    <script>
+
+        const salary = [];
+         i = 0 ;
+         
+         let a = document.getElementById('add_salary');
+
+        function addvalue(){
+            salary[i]= parseInt(a.value);
+            i+=1;
+            console.log(salary);
+        }
+
+        function large_amt(){
+            var large = salary[0];
+            
+            for (i = 1; i < salary.length; i++) {
+                if(large < salary[i]) {
+                    large = salary[i];
+
+                }
+                else{
+                    large = large;
+                }
+            }
+           console.log(large);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top salary</title>
+</head>
+<body>
+    <input type="text" id="add_name"/>
+    <button id="add_salary_amt" onclick="addvalue();">ADD</button>
+    <button onclick="full_name();" id="name_value">name</button>
+    <script>
+       
+        let name1 = document.getElementById('add_name');
+        var a = [];
+        i = 0;
+        let cap_letter = [];
+        function addvalue(){
+            a[i]=name1.value;
+            i+=1;
+            console.log(a);
+        }
+
+        function full_name(){
+            j=0;
+            for(let i= 0 ; i<a.length;i++){
+                if(a[i].startsWith("P") || a[i].startsWith("p")){
+                    cap_letter[j]=a[i];
+                    j+=1;
+                } 
+            }
+            console.log(cap_letter); 
+        }
+    </script>
+
+</body>
+</html>
