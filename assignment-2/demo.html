@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+    //     let ages = [3,56,12,18,34,16,35,12,19,18];
+    //     let data=  ages.filter((ele)=>{
+    //      return ele>18
+    //   })
+    //   console.log(data)
+      
+    //  let data2= data.reduce((acc,ele)=>{
+    //     return acc+ele
+    //   }) 
+
+    //   console.log(data2)
+    let ages = [3,56,12,18,34,16,35,12,19,18];
+        let data=  ages.filter((ele)=>{
+         return ele>18
+      }).reduce((acc,ele)=>{
+        return acc+ele
+      })
+      console.log(data)
+
+     //reduce
+     let saqure = [2,3,5,2,3,6];
+     sum = 0;
+
+     let squareall= (saqure.map((ele) => ele*ele)).reduce((acc, ele)=> acc+ele);
+     //let sumall= squareall.reduce((acc, ele)=> acc+ele);
+
+     console.log("sum of square array:",squareall);
+     //console.log("sum of square array:",sumall);
+
+
+     let numbersqr = [2,3,5,2,3,6];
+
+     let sqrnum = numbersqr.map((ele)=>{
+        return ele*ele;
+    })
+    console.log(sqrnum);
+
+    let sumsqr = sqrnum.reduce((total,ele)=>{
+        return total+ele;
+    });
+    console.log(sumsqr);
+    </script>
+    
+</body>
+</html>

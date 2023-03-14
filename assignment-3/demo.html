@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method</title>
+</head>
+<body>
+<p id="demo2"></p>
+ <script>
+    let fruits = ["Banana", "Orange", "Apple", "Mango"]
+    let length = fruits.length;
+    console.log(length);
+
+    //first array value
+    let firstfruit = fruits[0];
+    console.log(firstfruit);
+
+    //last array value
+    let lastfruit = fruits[fruits.length -1];
+    console.log(lastfruit);
+
+    //loop array
+    let cars = ["Saab", "Volvo", "BMW","Hyundai Creta","Honda City","Volkswagen"]
+    let flen = cars.length;
+
+
+   //let text =  cars.join('\r\n') ;
+   
+    for (let i = 0 ; i < flen ; i++){
+        //text += cars[i];
+         text= cars.join('\r\n');
+    }
+    console.log(text);
+    //document.getElementById("demo").innerHTML =text;
+
+    //foreach function
+    let bikes = ["Yamaha MT", "Hero Splendor", "Royal Enfield"]
+    let blen = bikes.length;
+
+    bikes.forEach(Myfunction);
+
+    function Myfunction(){
+        text2= bikes.join('\r\n');
+    }
+    console.log(text2);
+
+    //Adding Array Elements
+    let fruits2 = ["Banana", "Orange", "Apple"];
+    //fruits2.push("lemon");
+    fruits2[6] = "Lemon"; 
+    console.log(fruits2);
+    //length
+    let veg = ["Peas", "Tomato", "Potato","Beans"];
+    veg[veg.length] = "Pumpkin";
+    console.log(veg);
+
+    //Converting Arrays to Strings-toString,join
+    let tostr = ["Banana", "Orange", "Apple"];
+    //document.getElementById('demo2').innerHTML = tostr.toString();
+    document.getElementById('demo2').innerHTML = tostr.join("*");
+
+    //Popping and Pushing-push(),pop()
+    let pop_ele = ["Banana", "Orange", "Apple","kiwi"];
+    //pop_ele.pop();
+    console.log(pop_ele.pop());//remove last array value
+    //console.log(pop_ele.pop());//showing remove last array value
+
+    let popfruits = ["Banana", "Orange", "Apple", "Mango"];
+   // popfruits.pop();
+    console.log(popfruits.pop());
+
+    let pushele = ["Banana", "Orange", "Apple"];
+    pushele.push('kiwi');
+    //console.log(pushele);
+    console.log(pushele.push());
+
+    //Shifting Elements -shift -remove first element,unshift-add element at first element
+    let shiftele = ["Banana", "Orange", "Apple"];
+    shiftele.shift();
+    console.log(shiftele);//remove first array value
+    console.log(shiftele.shift());//showing remove first array value
+
+    let unshiftele = ["Banana", "Orange", "Apple"];
+    //unshiftele.unshift('kiwi');//add to first value
+    unshiftele[unshiftele.length] = 'kiwi';
+    console.log(unshiftele);//add last array value
+    
+    // Array delete
+    let dele_tele = ["Banana", "Orange", "Apple"];
+    //delete dele_tele[1];
+    delete dele_tele[0];
+    //console.log(dele_tele);//add last array value
+    console.log(dele_tele[1]) ;
+
+    //Merging (Concatenating) Arrays-combine two array in one - concat
+
+    let girls = ["meenu","shakshi","ujwala","nita"];
+    let boys = ["vaibhav","mukesh","jayesh","nitin"];
+
+    let persons = girls.concat(boys);
+    console.log(persons) ;
+
+    //example-2 concat
+
+    let pname = "seema";
+    let lname = "varpe";
+    let mname = "tukaram";
+
+    let fname = pname.concat(mname,lname);
+    console.log(fname);
+
+    //Splicing and Slicing Arrays-splice (a,b)-[a]:-first element when they will add element and [b]:- value indicate how much element remove
+    let splice_ele = ["meenu","shakshi","ujwala","nita"];
+    splice_ele.splice(2,0,"seema");
+    console.log(splice_ele);
+
+
+    //JavaScript Array slice()
+
+    let slice_ele1 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    slice_text = slice_ele1.slice(1);//slice element form orange
+    console.log(slice_text);
+
+
+    //Sorting an Array
+    let sort_ele = ["Pooja","Reshma","Seema","Sangita","Aparna"];
+    //sort_text = sort_ele.sort();
+    console.log(sort_ele.sort());//alphabetical element sort
+    console.log(sort_ele.reverse());//reverse element sort
+
+    //lowest value sort 
+    const low_num = [25,60,80,100,1];
+    low_num.sort(function(a,b){return(a-b)});
+    console.log("Lowest value of " + low_num[0]);
+   
+    //highest value sort 
+    const high_num = [25,60,80,100,1];
+    high_num.sort(function(a,b){return(b-a)});
+    console.log("Highest value of " + high_num[0]);
+
+
+    //JavaScript Array Iteration
+    //Array iteration methods operate on every array item.
+
+   //
+   //JavaScript Array forEach()
+   //The forEach() method calls a function (a callback function) once for each array element.
+
+
+   let num = [40,12,60,80,100];
+   
+   let txt ="";
+
+   num.forEach(myFunction3);
+
+   function myFunction3(value, index, array) {
+        txt += index + "<br>"; 
+    }
+    console.log(txt);
+
+    //JavaScript Array.map()
+    //Creates a new array by performing a function on each array element.
+
+
+ //using map function number multiple with 2 get value
+
+  let arr_map = [5,4,3,2];
+  let arr_map2 = arr_map.map(mapfun);
+
+  function mapfun(value){
+    return value*2;
+  }
+  
+  console.log(arr_map2);
+
+
+  //JavaScript Array filter()
+  let arr_filter = [20,50,60,11,8];
+  let arr18 = arr_filter.filter(myfilter);
+  function myfilter(value){
+    return value > 18;
+  }
+  console.log(arr18);
+
+ //JavaScript Array reduce()
+
+ //reduce() method runs a function on each array element to produce (reduce it to) a single value.
+
+ let reduce_ele = [40,45,60,70];
+
+ let reduce_val = reduce_ele.reduce(myReduce);
+
+ function myReduce(total , value){
+    return total+value;
+ }
+ console.log(reduce_val);
+
+ //JavaScript Array.reduce()
+
+ //This example finds the sum of all numbers in an array:
+
+ let reduce_ele2 = [40,4,5,2];
+ let reduce_valu2 = reduce_ele2.reduce(Reducefun , 200);
+
+ function Reducefun(total , value){
+    return total+value;
+ }
+ console.log(reduce_valu2);
+
+
+ //reduce right
+ let reduce_right_ele = [10,20,30,40];
+ let reduce_right_valu = reduce_right_ele.reduceRight(reduceRight);
+
+ function reduceRight(total,value){
+  return total+value*2;
+ }
+ console.log(reduce_right_valu);
+
+
+ //JavaScript Array every()-check value array true or false
+ let age_18 = [30,40,2,11,3,18];
+ let age_vali = age_18.every(myarr);
+
+ function myarr(value){
+    return value > 18;
+ }
+ console.log(age_vali);
+
+ //JavaScript Array some()
+
+let arr_some = [30,40,2,18,14,20];
+let arr_vali_some = arr_some.some(Mysomearr);
+
+function Mysomearr(value){
+    return value > 18;
+}
+console.log(arr_vali_some);
+
+
+//JavaScript Array indexOf()
+//The indexOf() method searches an array for an element value and returns its position.
+
+let arr_indexof = ["apple","mango","bananna","mango", "pinapple"];
+
+let arr_indexval = arr_indexof.indexOf('mango');
+console.log(arr_indexval);
+
+
+//JavaScript Array lastIndexOf()
+
+let arr_lastindex = ["apple","mango","bananna","mango", "pinapple"];
+let arr_lastindexval = arr_lastindex.lastIndexOf('mango');
+
+console.log(arr_lastindexval);
+
+//JavaScript Array find()
+
+//The find() method returns the value of the first array element that passes a test function.
+
+let arr_find = [40,50,20,8,18,10];
+let arr_findval = arr_find.find(myFindarr);
+
+function myFindarr(value){
+    return value > 18 ;
+}
+console.log(arr_findval);
+
+//JavaScript Array findIndex()
+
+let arr_findindex = [4, 9, 16, 25, 29];
+let arr_findindexval = arr_findindex.findIndex(myfindIndex);
+
+function myfindIndex(value){
+    return value > 18;
+
+}
+console.log(arr_findindexval);
+
+//const
+const car = ["Saab", "Volvo", "BMW"];
+
+car[1] = "Tayato";
+
+car.push("Awdi");
+console.log(car);
+
+//Assigned when Declared
+// const ass_cars;
+// ass_cars = ["Saab", "Volvo", "BMW"];
+// console.log(ass_cars);
+
+
+ass_cars = ["Saab", "Volvo", "BMW"];
+var ass_cars;
+console.log(ass_cars[1]);
+
+
+
+</script>   
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide show using setInterval</title>
+   
+</head>
+<body>
+    <ul id="slideshow">
+        <li id="imgtag"></li>
+       
+    </ul>
+    <script>
+       let slideArray=["url(../assignment-7/images/values-1.jpg)", "url(../assignment-7/images/values-2.jpg)" , "url(../assignment-7/images/values-3.jpg)"];
+       let imgNode=document.getElementById('imgtag');
+       imgNode.setAttribute('class' , 'slideview');
+       imgNode.style.backgroundSize = "cover";
+       imgNode.style.width = "100%";
+       imgNode.style.height = "100%";
+       let listNode=document.getElementById('slideshow');
+       listNode.style.width = "600px";
+       listNode.style.height = "400px";
+       listNode.style.listStyleType = "none";
+       listNode.style.margin = "0 auto";
+       listNode.style.padding = "0px";
+       let i=0;
+        setInterval(()=>imgslide(),3000);
+        
+       function imgslide(){
+            imgNode.style.backgroundImage=slideArray[i];
+            i++;
+            if(i==slideArray.length)
+             i=0;
+       }
+
+   
+    </script>
+</body>
+</html>

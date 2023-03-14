@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM -checkbox - Gender</title>
+</head>
+<body>
+    <form action="">
+        <label>Choose gender</label>
+        <div>
+          <label>Male:</label>  <input type="radio" id="male" name="gender" value="Male" onchange="getValue()"><br>
+          <label>Female</label>  <input type="radio" id="Female" name="gender" value="Female" onchange="getValue()"><br>
+         
+        </div>
+    </form>
+    <script>
+        let nodeArray = document.getElementsByName('gender');
+        function getValue(){
+            for (let node of nodeArray){
+                if(node.checked)
+                console.log(node.value);
+            }
+            console.log("-------------");
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Method</title>
+</head>
+<body>
+    <form>
+       <!-- Implement blur event on any input field -->
+        <label>First Name:</label>
+        <input type="text" id="fname" name="fname" value="name" onblur="blurEvent()"/>
+        <label>Last Name:</label>
+        <input type="text" id="lname" name="lname" value="name">
+    </form>
+    <div>
+        <img src="https://www.w3schools.com/tags/smiley.gif" alt="" id="imgtag" width="200px" height="100px">
+    </div>
+<script>
+    //blurevent for input field
+let blurEvent = ()=>console.log("blur event handle")
+
+//Access element attribute value - width ,source ,height
+let imgtagNode= document.getElementById("imgtag");
+let nodeSrc=imgtagNode.src;
+let nodeWidth=imgtagNode.width;
+let nodeHeight=imgtagNode.height;
+console.log("Image current width " + nodeWidth + "px");
+console.log("Image current height " + nodeHeight + "px");
+console.log("Image source of image " + nodeSrc);
+</script>
+</body>
+</html>

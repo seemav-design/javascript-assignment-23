@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Strings</title>
+</head>
+<body>
+    <script>
+         <!-- JavaScript strings are for storing and manipulating text. -->
+
+        let string_ele = "kavita";
+        console.log(string_ele);
+     
+    let f_string = "John";
+    let l_string = "Doe" ; 
+
+    console.log(f_string + " " + l_string);
+
+    //String Length
+    let str_len = "hdjhfjsdfhjsdfuenreroalebwer";
+    let r_length = str_len.length;
+    console.log(r_length);
+
+    //Escape Character
+    //The sequence \"  inserts a double quote in a string:
+    let es_char = "We are the so-called \"Vikings\" from the north.";
+    console.log(es_char);
+    
+    //The sequence \'  inserts a single quote in a string:
+       let s_quote = 'It\'s alright.'
+       console.log(s_quote);
+    
+    //The character \ is called backslash.
+    let call_back_ele = "The character \\ is called backslash.";
+    console.log(call_back_ele);
+
+    //JavaScript String Methods
+        //If you omit the second parameter, the method will slice out the rest of the string:
+        let slice_ele = "Apple, Banana, Kiwi";
+        let r_slice_ele = slice_ele.slice(4);
+        console.log(r_slice_ele);
+
+        //JavaScript String substr()
+
+        let sbu_str = "Apple, Banana, Kiwi";
+        let r_sb_str = sbu_str.substr(7);
+        console.log(r_sb_str);//If you omit the second parameter, substr() will slice out the rest of the string.
+        
+        let r_sb_str2 = sbu_str.substr(7,2);//The difference is that the second parameter specifies the length of the extracted part.
+        console.log(r_sb_str2);
+
+        //Replacing String Content
+        let re_text = "Please visit Microsoft!";
+        let r_newText = re_text.replace("Microsoft", "W3Schools");//The replace() method replaces a specified value with another value in a string:
+
+        console.log(r_newText);
+        //By default, the replace() method is case sensitive.
+        //To replace case insensitive, use a regular expression with an /i flag (insensitive):
+        let ire_text = "Please visit Microsoft!";
+        let ir_newText = ire_text.replace(/MICROSOFT/i, "W3Schools");
+        console.log(ir_newText);
+
+        //To replace all matches, use a regular expression with a /g flag (global match):
+        let gre_text = "Please visit Microsoft!";
+        let gr_newText = gre_text.replace(/MICROSOFT/g, "W3Schools");
+        console.log(gr_newText);
+
+        //JavaScript String ReplaceAll()
+        let r_all_str = "I love cats. Cats are very easy to love. Cats are very popular.";
+        r_all_str = r_all_str.replaceAll("cats" , "dogs");
+        r_all_str = r_all_str.replaceAll("Cats" , "Dogs");
+
+        console.log(r_all_str);
+
+        //Converting to Upper and Lower Case
+        let upper_text =  "i love cats";
+        upper_text = upper_text.toUpperCase();
+        console.log(upper_text);
+
+        let lower_text =  "I LOVE CATS";
+        lower_text = lower_text.toLowerCase();
+        console.log(lower_text);
+
+        //JavaScript String toLowerCase()
+
+        let conv_text1 = "I LOVE CATS";
+        let conv_text2 = conv_text1.toLowerCase();
+        console.log(conv_text2);
+
+
+        //JavaScript String concat()
+        let con_text = "Hello";
+        let con_text2 = "World";
+         rtext = con_text.concat( " " + con_text2)//
+         rtxt2 = "Hello2".concat(" " , "World2")
+         //The concat() method can be used instead of the plus operator. These two lines do the same:
+        console.log(rtext);
+        console.log(rtxt2);
+
+        //JavaScript String trim()
+        let str_trim = "          Hello      "; 
+        console.log(str_trim);
+
+        let str_trim2 = "          Hello      "; 
+        r_str_trim =str_trim2.trim();
+        console.log(r_str_trim);
+
+        //start trim space,trimStart,trimEnd
+        let s_str_trim = "          Hello      "; 
+        sr_str_trim =s_str_trim.trimStart();
+        console.log(sr_str_trim);
+
+        //JavaScript String Padding,padEnd(),padStart()
+        //padStart() method pads a string with another string
+        let p_text  = "5";
+        r_ptext = p_text.padStart(2, "x");
+
+        console.log(r_ptext);
+
+        let pd_numb = 5;
+        let pd_text = pd_numb.toString();
+        let padded = pd_text.padStart(4,"0");
+
+        console.log(padded);
+
+      //Extracting String Characters
+      //JavaScript String charAt()
+     let charat_ele = "Hello";
+     let r_charat_ele = charat_ele.charAt(0);
+     console.log(r_charat_ele);
+
+     //Converting a String to an Array -- split(",")    // Split on commas,split(" ")    // Split on spaces,split("|")    // Split on pipe
+    
+
+     let text = "a,b,c|d,e f";
+    const myArray = text.split("|");
+     console.log(myArray);
+    
+
+     //JavaScript Search Methods -String indexOf(),String lastIndexOf(),String search(),String match()
+/*,String matchAll(),String includes(),String startsWith(),String endsWith()*/
+
+ //JavaScript String indexOf(),lastIndexOf()
+
+    let str = "Please locate where 'locate' occurs!";
+    let r_str = str.indexOf("locate");
+    console.log(r_str);
+
+    //JavaScript String includes()
+
+    let inld_text = "Hello world, welcome to the universe.";
+    let r_inld_text = inld_text.includes("world");
+    console.log(r_inld_text);
+    //Check if a string includes "world". Start at position 12:
+    let r_inld_text2 = inld_text.includes("world" , 12);
+    console.log(r_inld_text2);
+
+    //JavaScript String startsWith(),endsWith()
+    let startstr = "Hello world, welcome to the universe.";
+    let r_startstr = startstr.startsWith("world" ,6 );
+    console.log(r_startstr);
+
+    let header = "Templates Literals"
+    let tag = ["template literals", "javascript", "es6"];
+    let html = `<h2>${header}</h2><ul>`;
+    for (let x of tag){
+        html+= `\n <li>${x}</li>`;
+    }
+    html+= `</ul>`;
+    console.log(html);
+   </script>
+   
+
+</body>
+</html>
